@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Detection</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+      }
+      #app {
+        text-align: center;
+      }
+      .container {
+        position: relative;
+        margin: 20px 0;
+      }
+      #video {
+        border: 3px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #status {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .layout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .tech-summary {
+        margin-left: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="app">
+        <h1>Real-time Object Detection</h1>
+        <div class="container">
+          <video id="video" width="640" height="480" autoplay playsinline></video>
+          <canvas id="canvas"></canvas>
+        </div>
+        <div id="status">Loading model...</div>
+      </div>
+      <div class="tech-summary">
+        <h2>Technical Implementation</h2>
+        <ul>
+          <li>
+            <strong>Computer Vision:</strong> TensorFlow.js COCO-SSD model for real-time object detection using WebGL backend. Pre-trained on MS COCO dataset with 80 object classes.
+          </li>
+          <li>
+            <strong>Video Processing:</strong> WebRTC's getUserMedia API for camera access, HTML5 Canvas API for frame-by-frame rendering at 60fps using requestAnimationFrame.
+          </li>
+          <li>
+            <strong>Build System:</strong> Vite.js for dev server and bundling, utilizing ES modules with HMR (Hot Module Replacement) and optimized production builds.
+          </li>
+          <li>
+            <strong>Visualization:</strong> Custom WebGL-accelerated rendering pipeline with dynamic color generation using hash functions and alpha-blended overlays.
+          </li>
+          <li>
+            <strong>Performance:</strong> Async/await pattern for non-blocking operations, GPU-accelerated inference, and optimized DOM updates using RAF for smooth rendering.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
