@@ -1,5 +1,8 @@
 # Real-Time Object Detection Web Application
 
+## Access
+- The project can be accessed at: https://ak-khan-object-detection.vercel.app/
+
 ## Project Overview
 - A web-based application for real-time object detection using webcam input.
 - Built with modern web technologies for a responsive and user-friendly interface.
